@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="asset/master.css">
+    <title>Document</title>
+
+</head>
+
+<body onload="_txtEd()">
+    <main id="main">
+        <div id="editor">
+            <nav id="head">
+                <h1>Text Editor With Mohmmad Sadegh Seif </h1>
+                <h2 id="hhh"></h2>
+                <div id="btn">
+                    <button onclick="exCmd('bold')" title="bold"><i class="fa fa-bold"></i></button>
+                    <button onclick="exCmd('italic')" title="italic"><i class="fa fa-italic"></i></button>
+                    <button onclick="exCmd('underline')" title="underline"><i class="fa fa-underline"></i></button>
+                    <button id="ss" onclick="exCmd('strikethrough')" title="strikethrough"><i class="fa fa-strikethrough"></i></button>
+                    <button onclick="exCmd('justifyLeft')" title="left"><i class="fa fa-align-left"></i></button>
+                    <button onclick="exCmd('justifyCenter')" title="center"><i class="fa fa-align-center"></i></button>
+                    <button onclick="exCmd('justifyFull')" title="justify"><i class="fa fa-align-justify"></i></button>
+                    <button onclick="exCmd('justifyRight')" title="right"><i class="fa fa-align-right"></i></button>
+                    <button onclick="exCmd('cut')" title="cut"><i class="fa fa-cut"></i></button>
+                    <button onclick="exCmd('copy')" title="cut"><i class="fa fa-copy"></i></button>
+                    <button onclick="exCmd('indent')" title="indent"><i class="fa fa-indent"></i></button>
+                    <button onclick="exCmd('outdent')" title="outdent"><i class="fa fa-outdent"></i></button>
+                    <button onclick="exCmd('subscript')" title="subscript"><i class="fa fa-subscript"></i></button>
+                    <button onclick="exCmd('superscript')" title="superscript"><i class="fa fa-superscript"></i></button>
+                    <button onclick="exCmd('redo')" title="redo"><i class="fa fa-repeat"></i></button>
+                    <button onclick="exCmd('undo')" title="undo"><i class="fa fa-undo"></i></button>
+                    <button onclick="exCmd('insertOrderedList')" title="ol list"><i class="fa fa-list-ol"></i></button>
+                    <button onclick="exCmd('insertUnorderedList')" title="ul list"><i class="fa fa-list-ul"></i></button>
+                    <button onclick="exCmd('insertParagraph')" title="paragraph"><i class="fa fa-paragraph"></i></button>
+                    <button onclick="exCmdArg('insertImage', prompt('enter your image Address:','https:\/\/'))" title="image"><i class="fa fa-paperclip"></i></button>
+                    <button onclick="exCmd('insertHorizontalRule')" title="HR">HR</i></button>
+                    <button onclick="exCmdArg('createLink', prompt('enter your link:','https:\/\/'))" title="link"><i class="fa fa-link"></i></button>
+                    <button onclick="exCmd('unlink')" title="unlink"><i class="fa fa-unlink"></i></button>
+                    <button onclick="_toggle()" title="Toggle Edit">Toggle Edit</button>
+
+
+                    <select onchange="exCmdArg('formatBlock',this.value)">
+                        <option value="H1">H1</option>
+                        <option value="H2">H2</option>
+                        <option value="H3">H3</option>
+                        <option value="H4">H4</option>
+                        <option value="H5">H5</option>
+                        <option value="H6">H6</option>
+                    </select>
+                    <br>
+                    <label for="">Font:</label>
+                    <select onchange="exCmdArg('fontName',this.value)">
+                        <option value="Arial">Arial</option>
+                        <option value="Comin Sans Ms">Comin Sans Ms</option>
+                        <option value="Tahoma">Tahoma</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Verdana">Verdana</option>
+                    </select>
+                    <label for="">Size:</label>
+                    <select onchange="exCmdArg('fontSize', this.value)">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+
+                    </select>
+                    <label for="">Color:</label>
+                    <input type="color" onchange="exCmdArg('foreColor',this.value)">
+                    <label for="">BackgroudColor:</label>
+                    <input type="color" onchange="exCmdArg('hiliteColor',this.value)">
+                    <button onclick="exCmd('selectAll')" title="Select All">Select All</i></button>
+
+                    <button onclick="exCmd('delete')" title="Delete">Delete</i></button>
+
+
+
+                </div>
+            </nav>
+            <nav id="text">
+                <iframe id="txt_editor" name="textcontent"></iframe>
+            </nav>
+        </div>
+    </main>
+</body>
+<script src="asset/master.js"></script>
+
+</html>
